@@ -38,7 +38,15 @@ const CampgroundSchema = new Schema({
             ref: 'Review'
         }
     ]
-});
+}, { toJSON: { virtuals: true } });
+
+CampgroundSchema.virtual('properties.popUpMarkup').get(function () {
+    return `<strong>
+    <a class = "link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" 
+    href="/campgrounds/${this._id}">
+    ${this.title}</a>
+    </strong>`
+})
 
 CampgroundSchema.post('findOneAndDelete', async function (doc) {
     if (doc) {
