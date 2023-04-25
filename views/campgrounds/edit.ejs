@@ -42,7 +42,7 @@
                 <input class="form-control" type="file" id="formFileMultiple" name="image" accept="image/*" multiple>
             </div>
             <div id="preview" class="mb-3 d-flex justify-content-between"></div>
-            <div class="mb-3">
+            <div class="mb-5">
                 <h5> Delete Images </h5>
                 <div class="row row-cols-1 row-cols-md-4 g-4 mb-3">
                     <% campground.images.forEach((image, i) => { %>
@@ -59,11 +59,11 @@
                     <% }) %>
                 </div>
             </div>
-            <div class="mb-3">
-                <button class="btn btn-info">Update Campground</button>
+            <div class="mb-3 d-flex justify-content-between">
+                <button class="btn btn-success">Update Campground</button>
+                <a class="btn btn-info" href="/campgrounds/<%= campground._id%>">Back To Campground</a>
             </div>
         </form>
-        <a href="/campgrounds/<%= campground._id%>">Back To Campground</a>
     </div>
 </div>
 
