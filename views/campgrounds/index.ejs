@@ -6,9 +6,9 @@
     <div class="row">
         <div class="col-md-4">
             <% if (campground.images.length) { %>
-            <img class="img-fluid" src="<%= campground.images[0].url %>" alt="">
+            <img class="img-fluid" crossorigin="anonymous" src="<%= campground.images[0].url %>" alt="">
             <% } else { %>
-            <img class="img-fluid"
+            <img class="img-fluid" crossorigin="anonymous"
                 src="https://images.unsplash.com/photo-1590122401646-5534a84afa13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
                 alt="">
             <% } %>
