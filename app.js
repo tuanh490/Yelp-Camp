@@ -23,7 +23,7 @@ const reviewRoutes = require('./routes/reviews');
 
 const User = require('./models/user');
 
-const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/yelp-camp'
+const dbUrl = 'mongodb://127.0.0.1:27017/yelp-camp'
 
 mongoose.set('strictQuery', true);
 
@@ -55,7 +55,7 @@ const store = MongoStore.create({
     mongoUrl: dbUrl,
     touchAfter: 24 * 60 * 60,
     crypto: {
-        secret: 'squirrel'
+        secret: process.env.SESSION_SECRET
     }
 });
 
